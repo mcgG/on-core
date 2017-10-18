@@ -1,8 +1,9 @@
-# Copyright 2016, EMC, Inc.
+# Copyright 2016, EMC, Inc. 
+ARG repo=nodesource
+ARG tag=4.4.6
 
-FROM nodesource/wheezy:4.4.6
+FROM ${repo}/wheezy:${tag}
 
-ADD https://raw.githubusercontent.com/RackHD/on-build-config/master/build-release-tools/docker_sources.list /etc/apt/sources.list
 COPY . /RackHD/on-core/
 
 RUN cd /RackHD/on-core \
